@@ -1,26 +1,34 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { useAppDispatch, useAppSelector } from "./store/hooks";
 
-function App() {
+import { PageWrapper, TopBar, Footer, Content } from "./App.styles";
+import { useEffect } from "react";
+import {
+  addTransaction,
+  getTransactions,
+  selectTransactions,
+} from "./store/slices/transactionSlice";
+
+export const App = () => {
+  const dispatch = useAppDispatch();
+  const transactions = useAppSelector(selectTransactions);
+
+  useEffect(() => {
+    dispatch(getTransactions());
+  }, []);
+
+  useEffect(() => {
+    console.log(transactions.transactions);
+  }, [transactions]);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <PageWrapper>
+      <TopBar>test</TopBar>
+      <Content>
+        <button onClick={() => dispatch(addTransaction())}>klik</button>
+      </Content>
+      <Footer>test</Footer>
+    </PageWrapper>
   );
-}
+};
 
 export default App;
