@@ -19,7 +19,7 @@ export const App = () => {
 
   return (
     <PageWrapper>
-      <TopBar>test</TopBar>
+      <TopBar>Topbar</TopBar>
       <Content>
         <AddTransactionForm />
         <TransactionsTable />

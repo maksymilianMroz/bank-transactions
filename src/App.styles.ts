@@ -9,7 +9,11 @@ export const TopBar = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: blue;
+  background-color: #3f6176;
+  min-height: 55px;
+  color: #fff;
+  font-weight: bold;
+  margin-bottom: 16px;
 `;
 
 export const Content = styled.div`
@@ -25,5 +29,9 @@ export const Footer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: red;
+  background-color: #3f6176;
+  min-height: 55px;
+  color: #fff;
+  font-weight: bold;
+  margin-top: 16px;
 `;
