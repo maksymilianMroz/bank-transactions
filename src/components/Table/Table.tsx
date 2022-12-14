@@ -7,7 +7,7 @@ export type TableColumns = Array<{
 }>;
 
 export type TableProps = {
-  children: Array<ReactNode>;
+  children: ReactNode;
   columns: TableColumns;
   customNoResultsText?: string;
   isLoading?: boolean;
@@ -32,11 +32,7 @@ export const Table = ({
           ))}
         </thead>
         <tbody>
-          {children.length ? (
-            children
-          ) : (
-            <Tr>{customNoResultsText || "NO RESULTS"}</Tr>
-          )}
+          {children ? children : <Tr>{customNoResultsText || "NO RESULTS"}</Tr>}
         </tbody>
       </StyledTable>
     )}
