@@ -11,7 +11,6 @@ export type TableProps = {
   columns: TableColumns;
   customNoResultsText?: string;
   isLoading?: boolean;
-  onSearch?: () => void;
 };
 
 export const Table = ({
@@ -19,7 +18,6 @@ export const Table = ({
   columns,
   customNoResultsText,
   isLoading,
-  onSearch,
 }: TableProps) => (
   <TableContent>
     {isLoading ? (
