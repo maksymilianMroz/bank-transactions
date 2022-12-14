@@ -1,7 +1,15 @@
 import { useAppDispatch, useAppSelector } from "./store/hooks";
+import { debounce } from "lodash";
 
-import { PageWrapper, TopBar, Footer, Content } from "./App.styles";
-import { useEffect } from "react";
+import {
+  PageWrapper,
+  TopBar,
+  Footer,
+  Content,
+  Wrapper,
+  SearchWrapper,
+} from "./App.styles";
+import { useEffect, useRef, useState } from "react";
 import {
   getTransactions,
   selectTransactions,
@@ -12,17 +20,46 @@ import { AddTransactionForm } from "./features/AddTransactionForm/AddTransaction
 export const App = () => {
   const dispatch = useAppDispatch();
   const { transactions } = useAppSelector(selectTransactions);
+  const [searchFilter, setSearchFilter] = useState("");
+  const [visibleTransactions, setVisibleTransactions] = useState(transactions);
+
+  const inputRef = useRef<HTMLInputElement>(null);
+
+  const onKeyUp = debounce(
+    () => setSearchFilter(inputRef.current?.value as string),
+    300
+  );
 
   useEffect(() => {
     dispatch(getTransactions());
   }, []);
 
+  useEffect(() => {
+    setVisibleTransactions(transactions);
+  }, [transactions]);
+
+  useEffect(() => {
+    const filteredTransactions = transactions.filter((transaction) => {
+      return transaction.beneficiary
+        ?.toLowerCase()
+        .includes(searchFilter.toLowerCase());
+    });
+
+    setVisibleTransactions(filteredTransactions);
+  }, [searchFilter]);
+
   return (
     <PageWrapper>
       <TopBar>Topbar</TopBar>
       <Content>
-        <AddTransactionForm />
-        <TransactionsTable />
+        <Wrapper>
+          <SearchWrapper>
+            <label htmlFor="search">Beneficiary search:</label>
+            <input onKeyUp={onKeyUp} ref={inputRef} id="search" />
+          </SearchWrapper>
+          <AddTransactionForm />
+        </Wrapper>
+        <TransactionsTable transactionsData={visibleTransactions} />
       </Content>
       <Footer>Footer</Footer>
     </PageWrapper>

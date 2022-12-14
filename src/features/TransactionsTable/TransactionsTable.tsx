@@ -2,9 +2,7 @@ import { useMemo, useState } from "react";
 import ReactPaginate from "react-paginate";
 import { Table, TableColumns } from "../../components/Table/Table";
 import { Td, Tr } from "../../components/Table/Table.styles";
-import { useAppSelector } from "../../store/hooks";
-import { Transaction } from "../../store/interfaces";
-import { selectTransactions } from "../../store/slices/transactionSlice";
+import { Transaction, Transactions } from "../../store/interfaces";
 import { formatDate } from "../../utils/date-time";
 
 import "./TransactionsTable.css";
@@ -44,16 +42,16 @@ const Items = ({ currentItems }: CurrentItems) => {
   );
 };
 
-export const TransactionsTable = () => {
-  const { transactions } = useAppSelector(selectTransactions);
+export const TransactionsTable = ({ transactionsData }: Transactions) => {
   const [itemOffset, setItemOffset] = useState(0);
   const ITEMS_PER_PAGE = 20;
   const endOffset = itemOffset + ITEMS_PER_PAGE;
-  const currentItems = transactions.slice(itemOffset, endOffset);
-  const pageCount = Math.ceil(transactions.length / ITEMS_PER_PAGE);
+  const currentItems = transactionsData.slice(itemOffset, endOffset);
+  const pageCount = Math.ceil(transactionsData.length / ITEMS_PER_PAGE);
 
   const handlePageClick = (event: any) => {
-    const newOffset = (event.selected * ITEMS_PER_PAGE) % transactions.length;
+    const newOffset =
+      (event.selected * ITEMS_PER_PAGE) % transactionsData.length;
     console.log(
       `User requested page number ${event.selected}, which is offset ${newOffset}`
     );

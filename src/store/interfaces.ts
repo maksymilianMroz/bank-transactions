@@ -14,6 +14,10 @@ export type Transaction = {
   description: string | null;
 };
 
+export type Transactions = {
+  transactionsData: Transaction[];
+};
+
 export enum RequestStatus {
   IDLE = "idle",
   LOADING = "loading",

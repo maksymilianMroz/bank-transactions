@@ -35,3 +35,15 @@ export const Footer = styled.div`
   font-weight: bold;
   margin-top: 16px;
 `;
+
+export const Wrapper = styled.div`
+  display: flex;
+  justify-content: space-around;
+`;
+
+export const SearchWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+`;
