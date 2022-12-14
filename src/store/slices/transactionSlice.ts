@@ -1,6 +1,5 @@
-import { createSlice, PayloadAction, createAsyncThunk } from "@reduxjs/toolkit";
+import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
-import { formatDate } from "../../utils/date-time";
 import { RequestStatus, TransactionsState } from "../interfaces";
 import type { RootState } from "../store";
 

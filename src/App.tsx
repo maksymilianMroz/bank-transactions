@@ -1,9 +1,8 @@
 import { useAppDispatch, useAppSelector } from "./store/hooks";
 
 import { PageWrapper, TopBar, Footer, Content } from "./App.styles";
-import { useEffect, useMemo } from "react";
+import { useEffect } from "react";
 import {
-  addTransaction,
   getTransactions,
   selectTransactions,
 } from "./store/slices/transactionSlice";
@@ -17,10 +16,6 @@ export const App = () => {
   useEffect(() => {
     dispatch(getTransactions());
   }, []);
-
-  useEffect(() => {
-    console.log(transactions);
-  }, [transactions]);
 
   return (
     <PageWrapper>
