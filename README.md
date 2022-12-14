@@ -3,9 +3,9 @@
 <br />
 - download this repository to your computer
 - download the repository with the database (https://github.com/maksymilianMroz/db-holder) - on the json-server
-- on both, run the ```npm install``` command
-- on the task repository then use the ```npm run server``` command
-- in the repository with the application use ```npm start``` -> the application should start on port 3000
+- on both, run the ``npm install`` command
+- on the task repository then use the ``npm run server`` command
+- in the repository with the application use ``npm start`` -> the application should start on port 3000
 <br />
 
 <h3 align="left">Things to do:</h3>
