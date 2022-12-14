@@ -16,7 +16,7 @@
 
 <h3 align="left">Things to do:</h3>
 
-I am totally aware that many things could have been done better - a few things are missing:
+I am totally aware that many things could have been done better - a few things are missing - I was unfortunately able to spend a little less time on the task than I had initially planned:
 
 - components could be broken down into smaller ones (both in the table and the form)
 - create more atoms: buttons, inputs or text drawers
