@@ -7,7 +7,7 @@ import {
   getTransactions,
   selectTransactions,
 } from "./store/slices/transactionSlice";
-import { TransactionsTable } from "./features/TransactionsTable";
+import { TransactionsTable } from "./features/TransactionsTable/TransactionsTable";
 
 export const App = () => {
   const dispatch = useAppDispatch();

@@ -1,11 +1,11 @@
 import { useMemo, useState } from "react";
 import ReactPaginate from "react-paginate";
-import { Table, TableColumns } from "../components/Table/Table";
-import { Td, Tr } from "../components/Table/Table.styles";
-import { useAppSelector } from "../store/hooks";
-import { Transaction } from "../store/interfaces";
-import { selectTransactions } from "../store/slices/transactionSlice";
-import { formatDate } from "../utils/date-time";
+import { Table, TableColumns } from "../../components/Table/Table";
+import { Td, Tr } from "../../components/Table/Table.styles";
+import { useAppSelector } from "../../store/hooks";
+import { Transaction } from "../../store/interfaces";
+import { selectTransactions } from "../../store/slices/transactionSlice";
+import { formatDate } from "../../utils/date-time";
 
 import "./TransactionsTable.css";
 
@@ -13,7 +13,7 @@ type CurrentItems = {
   currentItems: Transaction[];
 };
 
-function Items({ currentItems }: CurrentItems) {
+const Items = ({ currentItems }: CurrentItems) => {
   return (
     <>
       {currentItems &&
@@ -42,7 +42,7 @@ function Items({ currentItems }: CurrentItems) {
         })}
     </>
   );
-}
+};
 
 export const TransactionsTable = () => {
   const { transactions } = useAppSelector(selectTransactions);
