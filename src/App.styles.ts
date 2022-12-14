@@ -13,7 +13,7 @@ export const TopBar = styled.div`
 `;
 
 export const Content = styled.div`
-  background-color: green;
+  background-color: #9bb2ba;
   display: flex;
 
   @media (max-width: 1125px) {

@@ -28,7 +28,7 @@ export const Table = ({
       <StyledTable $isLoading={isLoading} cellSpacing="0">
         <thead>
           {columns.map(({ accessor, label }) => (
-            <Th key={`${accessor}-${label}`}>{label}</Th>
+            <Th key={`${accessor}-${label}`}>{label.toUpperCase()}</Th>
           ))}
         </thead>
         <tbody>

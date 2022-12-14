@@ -9,6 +9,8 @@ export const Row = styled.div`
 
 export const TableContent = styled.div`
   position: relative;
+  overflow: overlay;
+  font-size: 12px;
 `;
 
 export type StyledTableProps = {
@@ -17,6 +19,7 @@ export type StyledTableProps = {
 
 export const StyledTable = styled.table<StyledTableProps>`
   width: 100%;
+  overflow: hidden;
   ${({ $isLoading }) =>
     $isLoading &&
     css`
@@ -45,7 +48,7 @@ export const Th = styled.th`
 
 export const Tr = styled.tr`
   &:nth-child(odd) {
-    background: grey;
+    background: #7896a0;
   }
 `;
 
