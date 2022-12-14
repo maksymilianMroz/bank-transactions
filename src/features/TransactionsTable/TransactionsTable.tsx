@@ -94,6 +94,8 @@ export const TransactionsTable = ({ transactionsData }: Transactions) => {
         breakClassName="page-item"
         breakLinkClassName="page-link"
         activeClassName="active"
+        // probably only a temporary solution - after jump to 3rd page and try search beneficiary, there will be no transactions, cause they are showen on the 1st page
+        forcePage={1}
       />
     </Wrapper>
   );
