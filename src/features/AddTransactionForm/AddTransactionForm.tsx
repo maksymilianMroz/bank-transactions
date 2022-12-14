@@ -8,6 +8,7 @@ import { addTransaction } from "../../store/slices/transactionSlice";
 import {
   ControlsWrapper,
   CustomForm,
+  FormButton,
   FormWrapper,
   Input,
   TextField,
@@ -68,7 +69,7 @@ export const AddTransactionForm = () => {
         </TextField>
       </FormWrapper>
       <ControlsWrapper>
-        <button type="submit">Add Transaction</button>
+        <FormButton type="submit">Add Transaction</FormButton>
       </ControlsWrapper>
     </CustomForm>
   );

@@ -8,6 +8,7 @@ import {
   Content,
   Wrapper,
   SearchWrapper,
+  SearchContainer,
 } from "./App.styles";
 import { useEffect, useRef, useState } from "react";
 import {
@@ -54,8 +55,10 @@ export const App = () => {
       <Content>
         <Wrapper>
           <SearchWrapper>
-            <label htmlFor="search">Beneficiary search:</label>
-            <input onKeyUp={onKeyUp} ref={inputRef} id="search" />
+            <SearchContainer>
+              <label htmlFor="search">Beneficiary search:</label>
+              <input onKeyUp={onKeyUp} ref={inputRef} id="search" />
+            </SearchContainer>
           </SearchWrapper>
           <AddTransactionForm />
         </Wrapper>

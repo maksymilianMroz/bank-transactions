@@ -6,6 +6,7 @@ import { Transaction, Transactions } from "../../store/interfaces";
 import { formatDate } from "../../utils/date-time";
 
 import "./TransactionsTable.css";
+import { Wrapper } from "./TransactionTable.styles";
 
 type CurrentItems = {
   currentItems: Transaction[];
@@ -72,7 +73,7 @@ export const TransactionsTable = ({ transactionsData }: Transactions) => {
   );
 
   return (
-    <>
+    <Wrapper>
       <Table columns={columns} customNoResultsText="nothing found - no results">
         <Items currentItems={currentItems} />
       </Table>
@@ -94,6 +95,6 @@ export const TransactionsTable = ({ transactionsData }: Transactions) => {
         breakLinkClassName="page-link"
         activeClassName="active"
       />
-    </>
+    </Wrapper>
   );
 };

@@ -1,6 +1,13 @@
 import styled from "styled-components";
 
-export const CustomForm = styled.form``;
+export const CustomForm = styled.form`
+  color: #fff;
+  background-color: #3f6176;
+  border: 1px solid #fff;
+  padding: 8px 32px;
+  border-radius: 5px;
+  margin: 18px 0;
+`;
 
 export const FormWrapper = styled.div`
   display: flex;
@@ -24,4 +31,12 @@ export const TextField = styled.div`
   align-items: center;
   margin-bottom: 15px;
   border-bottom: 1px solid grey;
+`;
+
+export const FormButton = styled.button`
+  color: #fff;
+  background-color: #9bb2ba;
+  border: 1px solid #fff;
+  padding: 8px 32px;
+  border-radius: 5px;
 `;
