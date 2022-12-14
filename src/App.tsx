@@ -8,6 +8,7 @@ import {
   selectTransactions,
 } from "./store/slices/transactionSlice";
 import { TransactionsTable } from "./features/TransactionsTable/TransactionsTable";
+import { AddTransactionForm } from "./features/AddTransactionForm/AddTransactionForm";
 
 export const App = () => {
   const dispatch = useAppDispatch();
@@ -25,6 +26,7 @@ export const App = () => {
     <PageWrapper>
       <TopBar>test</TopBar>
       <Content>
+        <AddTransactionForm />
         <TransactionsTable />
       </Content>
       <Footer>Footer</Footer>

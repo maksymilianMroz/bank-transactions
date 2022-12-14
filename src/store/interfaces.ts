@@ -6,12 +6,12 @@ export type ResponseError = {
 
 export type Transaction = {
   id: number;
-  amount: number;
-  beneficiary: string;
-  account: string;
-  address: string;
+  amount: number | null;
+  beneficiary: string | null;
+  account: string | null;
+  address: string | null;
   date?: Date;
-  description: string;
+  description: string | null;
 };
 
 export enum RequestStatus {

@@ -27,9 +27,11 @@ export const Table = ({
     ) : (
       <StyledTable $isLoading={isLoading} cellSpacing="0">
         <thead>
-          {columns.map(({ accessor, label }) => (
-            <Th key={`${accessor}-${label}`}>{label.toUpperCase()}</Th>
-          ))}
+          <tr>
+            {columns.map(({ accessor, label }) => (
+              <Th key={`${accessor}-${label}`}>{label.toUpperCase()}</Th>
+            ))}
+          </tr>
         </thead>
         <tbody>
           {children ? children : <Tr>{customNoResultsText || "NO RESULTS"}</Tr>}

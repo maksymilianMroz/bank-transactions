@@ -1,5 +1,6 @@
 import { createSlice, PayloadAction, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
+import { formatDate } from "../../utils/date-time";
 import { RequestStatus, TransactionsState } from "../interfaces";
 import type { RootState } from "../store";
 
@@ -19,16 +20,17 @@ export const transactionsSlice = createSlice({
   name: "transactions",
   initialState,
   reducers: {
-    addTransaction: (state, action: PayloadAction) => {
+    addTransaction: (state, { payload }) => {
       state.transactions = [
         ...state.transactions,
         {
-          id: 12,
-          amount: 12,
-          beneficiary: "123",
-          account: "123",
-          address: "123",
-          description: "123",
+          id: state.transactions.length++,
+          amount: 1323,
+          beneficiary: payload.beneficiary,
+          account: payload.account,
+          address: payload.address,
+          description: payload.description,
+          date: payload.date,
         },
       ];
     },
